@@ -1,0 +1,9 @@
+<p *ngIf="!Products?.length">Loading...</p>
+
+<div class="product-title">
+  <h2>Browse Our Products Below!</h2>
+  <hr /> 
+</div>
+<app-product-list [Products]="Products"></app-product-list>
+
+

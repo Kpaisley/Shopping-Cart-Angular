@@ -1,0 +1,45 @@
+.cart {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 0 15px 0;
+    font-size: 1.2em;
+}
+
+span {
+  width: 100%;
+}
+
+.product-name {
+  text-decoration: underline;
+  padding-left: 15px;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+}
+
+.product-total {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.product-quantity {
+  text-align: right;
+  padding: 10px 15px 0 0;
+}
+
+.quantity-input {
+  width: 45px;
+}
+
+.quantity-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.quantity-buttons {
+  text-align: right;
+  padding: 10px 15px 0 0;
+}
