@@ -2,5 +2,15 @@
 
 <div class="cart-list">
   <app-cart-item *ngFor="let item of CartItems" [CartItem]="item" [deleteItem]="deleteItem" [updateQuantity]="updateQuantity"></app-cart-item>
+  <div class="product-summary">
+    <h4>Order Summary</h4>
+    <ul>
+      <li>Total Items: {{getTotalQuantity()}}</li>
+      <li>Subtotal: ${{getTotalPrice()}}<br /><em>(5% tax included in subtotal)</em></li>
+    </ul>
+    <input class="order-button" type="button" value="Place Order!" />
+    <p id="cart-warning"></p>
+    <a class="shopping-link">Continue Shopping!</a>
+  </div>
 </div>
 

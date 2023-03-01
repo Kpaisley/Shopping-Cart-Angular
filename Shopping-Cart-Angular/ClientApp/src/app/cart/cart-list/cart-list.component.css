@@ -3,3 +3,31 @@
     margin: 50px auto 25px auto;
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.2), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
 }
+
+.product-summary {
+  padding: 0 15px 0 15px;
+}
+
+  .product-summary h4 {
+    border-bottom: 2px solid;
+  }
+
+  .product-summary li {
+    padding: 10px 0 0 0;
+  }
+
+.order-button {
+  display: flex;
+  margin: 0 auto 10px auto;
+}
+
+#cart-warning {
+  text-align: center;
+  color: red;
+}
+
+.shopping-link {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
