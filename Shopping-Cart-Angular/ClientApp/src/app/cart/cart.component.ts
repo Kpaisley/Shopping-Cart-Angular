@@ -47,6 +47,7 @@ export class CartComponent implements OnInit {
     }
   }
 
+  //RETURN TOTAL ITEM QUANTITY
   getTotalQuantity = (): any => {
     let x = 0;
     for (let i = 0; i < this.CartItems.length; i++) {
@@ -55,6 +56,7 @@ export class CartComponent implements OnInit {
     return x;
   }
 
+  //RETURN TOTAL COST OF ALL ITEMS INCLUDING 5% TAX.
   getTotalPrice = (): any => {
     let x = 0;
     for (let i = 0; i < this.CartItems.length; i++) {
@@ -63,5 +65,26 @@ export class CartComponent implements OnInit {
     x += (x * 0.05);
     return x.toFixed(2);
   }
+
+  //CLEAR CART AND OPEN MODAL WHEN ORDER IS PLACED
+  clearCart = (): void => {
+    var x = document.getElementById('cart-warning') as HTMLParagraphElement;
+
+    if (this.getTotalQuantity() <= 0) {
+      x.innerHTML = "Please add some items to your cart first."
+      return;
+    }
+    else {
+      x.innerHTML = "";
+      this.cartService.clearCartItems();
+      document.getElementById('cart-modal')?.classList.add('display-flex');
+
+    }
+
+
+    
+  }
+
+  
 
 }

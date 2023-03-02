@@ -40,6 +40,10 @@ export class CartService {
     this.http.put(this.baseUrl + 'carts/' + id, quantity).subscribe(result => result);
   }
 
+  clearCartItems() {
+    this.http.delete(this.baseUrl + "carts").subscribe(result => result);
+  }
+
 
 
 }

@@ -45,5 +45,11 @@
             }
         }
 
+
+        public void clearCart()
+        {
+            this.Items.Clear();
+        }
+
     }
 }

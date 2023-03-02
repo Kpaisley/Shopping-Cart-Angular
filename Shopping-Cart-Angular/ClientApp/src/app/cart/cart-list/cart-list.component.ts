@@ -12,10 +12,13 @@ export class CartListComponent implements OnInit {
   @Input() updateQuantity: (cartProduct: any, qty: any) => void = Function;
   @Input() getTotalQuantity: () => any = Function;
   @Input() getTotalPrice: () => any = Function;
+  @Input() clearCart: () => void = Function;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  
   
   
 

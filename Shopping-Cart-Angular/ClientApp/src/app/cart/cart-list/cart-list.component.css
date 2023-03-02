@@ -31,3 +31,39 @@
   width: 100%;
   justify-content: center;
 }
+
+
+/*MODAL STYLING*/
+
+.modal {
+  justify-content: center;
+}
+
+.cart-modal-content {
+  text-align: center;
+  width: 700px;
+  max-width: 70%;
+  min-height: 35%;
+  border: 2px solid;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.3), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.9);
+  background-color: white;
+  margin: auto;
+}
+
+.cart-modal-content h1 {
+  padding: 0 0 20px 0;
+}
+
+.cart-modal-content h3 {
+  text-decoration: underline;
+  padding: 35px 0 50px 0;
+}
+
+.check-mark {
+  font-size: 5em;
+  color: limegreen;
+}
+
+.display-flex {
+  display: flex;
+}

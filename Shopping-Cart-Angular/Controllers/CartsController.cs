@@ -49,5 +49,11 @@ namespace Shopping_Cart_Angular.Controllers
         {
             _cartRepo.deleteCartItem(id);
         }
+
+        [HttpDelete]
+        public void DeleteAll()
+        {
+            _cartRepo.clearCart();
+        }
     }
 }

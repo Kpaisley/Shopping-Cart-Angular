@@ -4,7 +4,7 @@
   <span class="product-total">${{getPrice()}}</span>
   <span class="product-image"><img src="{{CartItem.imageUrl}}" width="80" height="75" /></span>
   <form class="quantity-form" (ngSubmit)="updateQuantity(CartItem, $event)">
-    <span class="product-quantity">Quantity:<input class="quantity-input" name="quantity" type="number" min="1" placeholder="{{CartItem.quantity}}" /></span>
+    <span class="product-quantity">Quantity:&nbsp;<input class="quantity-input" name="quantity" type="number" min="1" placeholder="{{CartItem.quantity}}" /></span>
     <span class="quantity-buttons">
       <input type="submit" value="&#x2713;" />
       <input type="button" value="X" (click)="deleteItem(CartItem.productId)" />
