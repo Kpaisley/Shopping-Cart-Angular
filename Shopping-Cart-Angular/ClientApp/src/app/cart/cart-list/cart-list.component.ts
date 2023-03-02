@@ -9,10 +9,11 @@ import { CartProduct } from '../../../../models/cart-product';
 export class CartListComponent implements OnInit {
   @Input() CartItems: CartProduct[] = [];
   @Input() deleteItem: (id: any) => void = Function;
-  @Input() updateQuantity: (cartProduct: any, qty: any) => void = Function;
   @Input() getTotalQuantity: () => any = Function;
   @Input() getTotalPrice: () => any = Function;
   @Input() clearCart: () => void = Function;
+  @Input() incrementQuantity: (cartItem: any) => void = Function;
+  @Input() decrementQuantity: (cartItem: any) => void = Function;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,7 +1,7 @@
 
 <div>
   <div class="cart-list">
-    <app-cart-item *ngFor="let item of CartItems" [CartItem]="item" [deleteItem]="deleteItem" [updateQuantity]="updateQuantity"></app-cart-item>
+    <app-cart-item *ngFor="let item of CartItems" [CartItem]="item" [deleteItem]="deleteItem" [incrementQuantity]="incrementQuantity" [decrementQuantity]="decrementQuantity"></app-cart-item>
     <div class="product-summary">
       <h4>Order Summary</h4>
       <ul>

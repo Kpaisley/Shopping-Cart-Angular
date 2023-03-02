@@ -31,13 +31,15 @@ export class CartService {
   }
 
   deleteCartItem(id: number) {
-    this.http.delete<number>(this.baseUrl + 'carts/' + id).subscribe(result => result);
+    return this.http.delete<CartProduct[]>(this.baseUrl + 'carts/' + id);
   }
 
+  incrementCartItemQuantity(id: number) {
+    return this.http.put<CartProduct[]>(this.baseUrl + 'carts/' + id, 1);
+  }
 
-  updateCartItemQuantity(id: number, quantity: number) {
-
-    this.http.put(this.baseUrl + 'carts/' + id, quantity).subscribe(result => result);
+  decrementCartItemQuantity(id: number) {
+    return this.http.put<CartProduct[]>(this.baseUrl + 'carts/' + id, 0);
   }
 
   clearCartItems() {

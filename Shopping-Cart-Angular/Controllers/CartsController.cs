@@ -36,18 +36,20 @@ namespace Shopping_Cart_Angular.Controllers
             _cartRepo.addCartItem(item);
         }
 
-        // PUT api/<CartsController>/5
+        //// PUT api/<CartsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] int quantity)
+        public List<CartItem> updateCartItemQuantity(int id, [FromBody] int num)
         {
-            _cartRepo.updateCartItemQuantity(id, quantity);
+            _cartRepo.updateCartItemQuantity(id, num);
+            return _cartRepo.Items;
         }
 
         // DELETE api/<CartsController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public List<CartItem> Delete(int id)
         {
             _cartRepo.deleteCartItem(id);
+            return _cartRepo.Items;
         }
 
         [HttpDelete]

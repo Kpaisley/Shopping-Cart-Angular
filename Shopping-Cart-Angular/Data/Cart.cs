@@ -35,15 +35,26 @@
 
         public void updateCartItemQuantity(int id, int qty)
         {
-            for(int i = 0; i < Items.Count; i++) 
+            for (int i = 0; i < Items.Count; i++)
             {
-                if (Items[i].ProductId == id)
+                if (Items[i].ProductId == id && qty != 0)
                 {
-                    Items[i].Quantity = qty;
+                    Items[i].Quantity++;
+                    return;
+                }
+                else if (Items[i].ProductId == id && qty == 0)
+                {
+                    Items[i].Quantity--;
+                    if (Items[i].Quantity < 1)
+                    {
+                        Items[i].Quantity = 1;
+                    }
                     return;
                 }
             }
         }
+
+        
 
 
         public void clearCart()

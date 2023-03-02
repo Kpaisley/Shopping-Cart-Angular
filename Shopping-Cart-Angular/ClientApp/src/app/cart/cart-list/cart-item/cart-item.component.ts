@@ -11,7 +11,8 @@ export class CartItemComponent implements OnInit {
 
   @Input() CartItem: CartProduct = new CartProduct();
   @Input() deleteItem: (id: any) => void = Function;
-  @Input() updateQuantity: (cartProduct: any, qty: any) => void = Function;
+  @Input() incrementQuantity: (cartItem: any) => void = Function;
+  @Input() decrementQuantity: (cartItem: any) => void = Function;
 
   constructor() { }
 

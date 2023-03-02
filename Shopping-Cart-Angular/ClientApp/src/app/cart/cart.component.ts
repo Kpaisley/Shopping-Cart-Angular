@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseRouteReuseStrategy } from '@angular/router';
 import { CartProduct } from '../../../models/cart-product';
 import { CartService } from '../services/cart.service';
 
@@ -10,11 +11,12 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit {
 
   CartItems: CartProduct[] = [];
-
+  totalItems: number = 0;
   constructor( private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getCartItems();
+    this.totalItems = this.getTotalQuantity();
   }
   //POPULATE CartItems FROM CartsController
   getCartItems = (): void => {
@@ -23,28 +25,26 @@ export class CartComponent implements OnInit {
     }, error => console.error(error));
   }
 
-  //DELETE ITEM FROM CART
-  deleteItem = (id: any): void => {
-    this.cartService.deleteCartItem(id);
-    this.getCartItems();
+  //INCREASE CART ITEM QUANTITY BY 1
+  incrementQuantity = (cartProduct: any): void => {
+    this.cartService.incrementCartItemQuantity(cartProduct.productId).subscribe(result => {
+      this.CartItems = result;
+      }, error => console.error(error));
+    
   }
 
-  //UPDATE QUANTITY OF ITEM IN CART
-  updateQuantity = (cartProduct: any, qty: any): void => {
-    let id = 0;
-    let quantity = 0;
+  //DECREASE CART ITEM QUANTITY BY 1
+  decrementQuantity = (cartProduct: any): void => {
+    this.cartService.decrementCartItemQuantity(cartProduct.productId).subscribe(result => {
+      this.CartItems = result;
+    }, error => console.error(error));
+  }
 
-    id = Number(cartProduct.productId);
-
-    quantity = Number(qty.target.quantity.value);
-    if (quantity <= 0) {
-      return;
-    }
-    else {
-      this.cartService.updateCartItemQuantity(id, quantity);
-      this.getCartItems();
-      
-    }
+  //DELETE ITEM FROM CART
+  deleteItem = (id: any): void => {
+    this.cartService.deleteCartItem(id).subscribe( result => {
+      this.CartItems = result
+    }, error => console.error(error));
   }
 
   //RETURN TOTAL ITEM QUANTITY
@@ -78,12 +78,10 @@ export class CartComponent implements OnInit {
       x.innerHTML = "";
       this.cartService.clearCartItems();
       document.getElementById('cart-modal')?.classList.add('display-flex');
-
     }
-
-
-    
   }
+
+   
 
   
 
