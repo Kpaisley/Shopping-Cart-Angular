@@ -10,6 +10,7 @@ import { CartService } from '../../../services/cart.service';
 export class ProductItemComponent implements OnInit {
 
   @Input() Product: Product = new Product();
+  @Input() ItemName: string = "";
 
   constructor(private cartService: CartService) { }
 
@@ -19,6 +20,20 @@ export class ProductItemComponent implements OnInit {
 
   addToCart(item: Product) {
     this.cartService.addCartItem(item);
+    this.openModal();
+
+    var x = document.getElementById('item-name') as HTMLHeadingElement;
+    x.innerHTML = (item.productName + " Added to Cart!");
+    
+  }
+
+  openModal() {
+    document.getElementById('add-item-modal')?.classList.add('display-flex'); 
+  }
+
+
+  closeModal() {
+    document.getElementById('add-item-modal')?.classList.remove('display-flex'); 
   }
 
 }
