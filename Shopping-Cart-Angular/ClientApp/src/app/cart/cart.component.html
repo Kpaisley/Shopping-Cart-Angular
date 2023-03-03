@@ -3,7 +3,7 @@
   <h2>Cart Summary</h2>
   <hr />
 </div>
-
+<p *ngIf="!CartItems?.length">Loading...</p>
 <app-cart-list [CartItems]="CartItems" [deleteItem]="deleteItem" [getTotalQuantity]="getTotalQuantity"
                [getTotalPrice]="getTotalPrice" [clearCart]="clearCart" [incrementQuantity]="incrementQuantity" [decrementQuantity]="decrementQuantity"></app-cart-list>
 

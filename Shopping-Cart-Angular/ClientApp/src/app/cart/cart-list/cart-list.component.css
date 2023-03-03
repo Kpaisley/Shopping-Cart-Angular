@@ -8,13 +8,13 @@
   padding: 0 15px 0 15px;
 }
 
-  .product-summary h4 {
-    border-bottom: 2px solid;
-  }
+.product-summary h4 {
+  border-bottom: 2px solid;
+}
 
-  .product-summary li {
-    padding: 10px 0 0 0;
-  }
+.product-summary li {
+  padding: 10px 0 0 0;
+}
 
 .order-button {
   display: flex;
@@ -30,6 +30,12 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  padding: 5px 0 5px 0;
+  color: #111;
+}
+
+.shopping-link:hover {
+  color: #0a8acd;
 }
 
 
