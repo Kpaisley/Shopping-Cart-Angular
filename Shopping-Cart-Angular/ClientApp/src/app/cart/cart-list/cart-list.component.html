@@ -10,7 +10,7 @@
       </ul>
       <input class="order-button" type="button" value="Place Order!" (click)="clearCart()" />
       <p id="cart-warning"></p>
-      <a class="shopping-link" [routerLink]="['/products']">Continue Shopping!</a>
+      <a class="shopping-link" [routerLink]="['/']">Continue Shopping!</a>
     </div>
   </div>
 
@@ -20,7 +20,7 @@
       <h2>Your order for ${{getTotalPrice()}} has been placed.</h2>
       <span class="check-mark">&#10003;</span>
       <h3>Have a wonderful day</h3>
-      <a [routerLink]="['/products']">Continue</a>
+      <a [routerLink]="['/']">Continue</a>
     </div>
   </div>
 
