@@ -7,8 +7,8 @@
     <span class="product-quantity">Quantity: {{CartItem.quantity}}</span>
     <span class="quantity-buttons">
       <input type="button" value="-" (click)="decrementQuantity(CartItem)" />
-      <input type="button" value="x" (click)="deleteItem(CartItem.productId)" />
       <input type="button" value="+" (click)="incrementQuantity(CartItem)" />
+      <img src="assets/images/trash.png" class="delete-button" width="30" (click)="deleteItem(CartItem.productId)" />
     </span>
   </form>
 </div>
