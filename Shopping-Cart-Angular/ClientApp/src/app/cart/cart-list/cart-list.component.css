@@ -12,6 +12,11 @@
   border-bottom: 2px solid;
 }
 
+.product-summary ul {
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
 .product-summary li {
   padding: 10px 0 0 0;
 }
